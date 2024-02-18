@@ -367,25 +367,19 @@ namespace лб1тфияк
         }
         private void Information()
         {
-            MessageBox.Show("Для создания файла в меню нажать ФАЙЛ -> СОЗДАТЬ\n" +
-                "Для открытия файла в меню нажать ФАЙЛ -> ОТКРЫТЬ (если вы не сохранили файл, при нажатии на открытие другого файла, будет уведомление о возможности сохранения)\n " +
-                "Для сохранения файла нажать в меню ФАЙЛ -> СОХРАНИТЬ КАК и выбрать папку куда сохранить\n" +
-                "Для выхода из программы нажать в меню ФАЙЛ -> ВЫХОД (если вы не сохранили файл, при нажатии на выход, будет уведомление о возможности сохранения)\n" +
-                "Для отмены действия нажмите в меню ПРАВКА -> ОТМЕНИТЬ\n" +
-                "Для повторения действия нажмите в меню ПРАВКА -> ПОВТОРИТЬ\n" +
-                "Для того, чтобы вырезать фрагмент нажмите в меню ПРАВКА -> ВЫРЕЗАТЬ\n" +
-                "Для того, чтобы копировать фрагмент нажмите в меню ПРАВКА -> КОПИРОВАТЬ\n" +
-                "Для того, чтобы удалить фрагмент нажмите в меню ПРАВКА -> УДАЛИТЬ\n" +
-                "Для того, чтобы выделить весь текст нажмите в меню ПРАВКА -> ВЫДЕЛИТЬ ВСЕ\n" +
-                "Для вызова справки (руководства пользователя) нажмите в меню СПРАВКА -> ВЫЗОВ СПРАВКИ\n" +
-                "Для вызова информации о программе нажмите СПРАВКА -> О ПРОГРАММЕ\n" +
-                "Панель инструментов содержит кнопки вызова часто используемых пунктов меню\n");
+            const string filePath = @"C:\Users\Ольга\source\repos\лб1тфияк\лб1тфияк\bin\Debug\netcoreapp3.1\y.html";
+            if (System.IO.File.Exists(filePath))
+            {
+                Process p = new Process();
+                p.StartInfo = new ProcessStartInfo(filePath) { UseShellExecute = true };
+                p.Start();
+            }
         }
         private void вызовСправкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Information();
-            //Process.Start(@"C:\Users\Ольга\source\repos\лб1тфияк\лб1тфияк\bin\Debug\netcoreapp3.1\y.html");
-       
+          
+
         }
 
         private void toolStripButton9_Click(object sender, EventArgs e)
@@ -394,9 +388,13 @@ namespace лб1тфияк
         }
         private void About_program()
         {
-            MessageBox.Show("Программа разаработана Моревой Ольгой в 2024 году\n" +
-                "По всем вопросам обращаться по телефону 89612243308\n" +
-                "Все права защищены нот копи плиз\n");
+            const string filePath = @"C:\Users\Ольга\source\repos\лб1тфияк\лб1тфияк\bin\Debug\netcoreapp3.1\about.html";
+            if (System.IO.File.Exists(filePath))
+            {
+                Process p = new Process();
+                p.StartInfo = new ProcessStartInfo(filePath) { UseShellExecute = true };
+                p.Start();
+            }
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
